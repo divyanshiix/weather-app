@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · Weatherly</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <main class="dashboard-page">
+    <!-- Top nav -->
+    <nav class="dashboard-nav glass-card">
+      <div class="nav-brand">
+        <span aria-hidden="true">🌤️</span>
+        <span>Weatherly</span>
+      </div>
+      <div class="nav-user">
+        <div>
+          <span id="user-display-name">Loading...</span>
+          <span id="user-email"></span>
+        </div>
+        <button id="logout-btn" class="btn-logout" type="button">Log Out</button>
+      </div>
+    </nav>
+
+    <!-- Search -->
+    <section class="search-panel glass-card">
+      <h2>Check the weather</h2>
+      <div id="search-alert" class="alert alert-error" role="alert"></div>
+
+      <form id="search-form" class="search-form" novalidate>
+        <label for="city-input" class="sr-only">City name</label>
+        <input type="text" id="city-input" placeholder="Enter a city, e.g. London" autocomplete="off" />
+        <button type="submit" id="search-btn" class="btn-primary">Search</button>
+      </form>
+
+      <div id="loading-row" class="loading-row hidden">
+        <span class="spinner spinner-dark"></span>
+        <span>Fetching weather...</span>
+      </div>
+    </section>
+
+    <div id="demo-banner" class="demo-banner hidden">
+      ⚠️ Showing demo weather data — add a real OpenWeatherMap API key in js/weather.js to fetch live results.
+    </div>
+
+    <!-- Empty state (default) -->
+    <section id="empty-state" class="empty-state glass-card">
+      <div class="empty-icon" aria-hidden="true">🔍</div>
+      <p>Search for a city above to see the current weather.</p>
+    </section>
+
+    <!-- Weather result card (hidden until a search succeeds) -->
+    <section id="weather-result" class="weather-result glass-card hidden">
+      <div class="weather-result-header">
+        <div>
+          <div id="weather-city" class="weather-city">City</div>
+          <div id="weather-date" class="weather-date">Date</div>
+        </div>
+      </div>
+
+      <div class="weather-main">
+        <img id="weather-icon" class="weather-icon-img" src="" alt="" />
+        <div>
+          <div id="weather-temp" class="weather-temp">--°C</div>
+          <div id="weather-condition" class="weather-condition">--</div>
+        </div>
+      </div>
+
+      <div class="weather-stats">
+        <div class="stat-box">
+          <div class="stat-label">Feels Like</div>
+          <div id="weather-feelslike" class="stat-value">--°C</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Humidity</div>
+          <div id="weather-humidity" class="stat-value">--%</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Wind Speed</div>
+          <div id="weather-wind" class="stat-value">-- m/s</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Firebase SDKs (only used when DEMO_MODE is false in js/firebase.js) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

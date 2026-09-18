@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up · Weatherly</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <main class="auth-page">
+    <section class="glass-card auth-card fade-in">
+      <div class="auth-brand">
+        <span class="brand-icon" aria-hidden="true">🌤️</span>
+        <h1>Weatherly</h1>
+      </div>
+      <p class="auth-subtitle">Create an account to get started.</p>
+
+      <div id="signup-alert" class="alert alert-error" role="alert"></div>
+
+      <form id="signup-form" class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" name="name" placeholder="Jane Doe" autocomplete="name" />
+          <span id="signup-name-error" class="field-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" name="email" placeholder="you@example.com" autocomplete="email" />
+          <span id="signup-email-error" class="field-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" name="password" placeholder="••••••••" autocomplete="new-password" />
+          <span id="signup-password-error" class="field-error"></span>
+          <span class="password-strength-hint">Use at least 6 characters.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-confirm">Confirm password</label>
+          <input type="password" id="signup-confirm" name="confirm" placeholder="••••••••" autocomplete="new-password" />
+          <span id="signup-confirm-error" class="field-error"></span>
+        </div>
+
+        <button type="submit" id="signup-submit" class="btn-primary">
+          <span class="btn-label">Create Account</span>
+          <span class="btn-spinner"><span class="spinner"></span></span>
+        </button>
+      </form>
+
+      <p class="auth-footer-text">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Firebase SDKs (only used when DEMO_MODE is false in js/firebase.js) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
