@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Weather App</h1>
+
+      <section id="auth-section" class="card">
+        <h2>Sign up or log in</h2>
+        <form id="auth-form">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="6" required />
+
+          <div class="actions">
+            <button type="button" id="signup-btn">Sign up</button>
+            <button type="button" id="login-btn">Log in</button>
+          </div>
+        </form>
+        <p id="auth-status" class="status"></p>
+      </section>
+
+      <section id="weather-section" class="card hidden">
+        <div class="session-header">
+          <p id="session-text"></p>
+          <button type="button" id="logout-btn">Log out</button>
+        </div>
+
+        <form id="weather-form">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" placeholder="e.g. London" required />
+          <button type="submit">Get weather</button>
+        </form>
+
+        <p id="weather-status" class="status"></p>
+        <article id="weather-result" class="weather-result hidden"></article>
+      </section>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

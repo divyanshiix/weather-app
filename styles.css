@@ -1,0 +1,126 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f2fe, #eff6ff);
+  padding: 1rem;
+}
+
+.app {
+  width: min(100%, 540px);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.actions {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.session-header p {
+  margin: 0;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.session-header button {
+  width: auto;
+  white-space: nowrap;
+}
+
+.status {
+  min-height: 1.25rem;
+  color: #0f172a;
+  margin: 0.75rem 0 0;
+}
+
+.weather-result {
+  margin-top: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: #f8fafc;
+}
+
+.weather-result h3 {
+  margin: 0 0 0.5rem;
+}
+
+.weather-result p {
+  margin: 0.25rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .session-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .session-header button {
+    width: 100%;
+  }
+}
